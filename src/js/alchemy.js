@@ -9,3 +9,11 @@ export async function getOwnersForCollection(addr, withTokenBalances, apiKey) {
   //console.log(result);
   return result?.data;
 }
+
+export async function getContractMetadata(addr, apiKey) {
+  const url = `https://eth-mainnet.g.alchemy.com/nft/v2/${apiKey}/getContractMetadata?contractAddress=${addr}`;
+  //console.log(url);
+  const result = await fetchHelper(url);
+  //console.log(result);
+  return result?.data;
+}
